@@ -1,6 +1,30 @@
-from flask import Flask, request, jsonify
-import joblib
+import random
+import sys
+import math
+import matplotlib.pyplot as plt
+import time
+import json
 import pandas as pd
+from bs4 import BeautifulSoup
+import requests
+import numpy as np
+from sklearn.preprocessing import OneHotEncoder, LabelEncoder, StandardScaler
+from sklearn.decomposition import PCA
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
+from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.metrics import accuracy_score, classification_report
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
+from sklearn.naive_bayes import GaussianNB
+from sklearn.ensemble import BaggingClassifier, AdaBoostClassifier, StackingClassifier
+from sklearn.impute import SimpleImputer
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+import joblib
+from flask import Flask, request, jsonify
+
+# ... (rest of your code) ...
 
 app = Flask(__name__)
 
@@ -34,5 +58,4 @@ def predict():
         return jsonify({'error': str(e)})
 
 if __name__ == '__main__':
-    
-    app.run(host='0.0.0.0', port='8080') # indent this line
+    app.run(debug=True, host='0.0.0.0', port=5000) #Added host and port
