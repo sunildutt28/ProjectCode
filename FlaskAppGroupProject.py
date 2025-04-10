@@ -19,7 +19,6 @@ def predict():
         
         # Extract features in the correct order
         features = [
-            float(data['gender']),
             float(data['age']),
             float(data['smoking']),
             float(data['yellowFingers']),
