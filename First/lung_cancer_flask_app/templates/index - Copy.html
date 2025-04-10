@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lung Cancer Prediction </title>
+</head>
+<body>
+    <h2>Lung Cancer Prediction Form  (Enter your Age as integer value, other fields as 1 for No and 2 for Yes)</h2>
+    <form action="/predict" method="post">
+        {% for col in ['AGE','SMOKING','YELLOW_FINGERS','ANXIETY','PEER_PRESSURE','CHRONIC DISEASE',
+                       'FATIGUE ','ALLERGY ','WHEEZING','ALCOHOL CONSUMING','COUGHING',
+                       'SHORTNESS OF BREATH','SWALLOWING DIFFICULTY','CHEST PAIN'] %}
+            <label>{{ col.strip() }}</label>
+            <input type="number" name="{{ col }}" required><br><br>
+        {% endfor %}
+        <input type="submit" value="Predict">
+    </form>
+
+    <h3>{{ prediction_text }}</h3>
+</body>
+</html>
