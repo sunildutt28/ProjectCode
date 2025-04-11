@@ -24,7 +24,7 @@ def predict():
         predicted_label = label_encoder.inverse_transform(prediction)[0]
         # Convert the prediction to a human-readable format
         if predicted_label == "YES":
-            predicted_label = "High Risk"
+            predicted_label = "High Risk !! Immediately consult a Pulmonologist."
         else:
             predicted_label = "Low Risk"
         return render_template('index.html', prediction_text=f"Lung Cancer Prediction: {predicted_label}")
